@@ -1,6 +1,8 @@
 import Link from "next/link";
 import React from "react";
+import { FaUserCircle } from "react-icons/fa";
 import { FaHouse } from "react-icons/fa6";
+import { HiBars3BottomRight } from "react-icons/hi2";
 
 const navLinks = [
   {
@@ -54,6 +56,14 @@ const Nav = () => {
               </Link>
             );
           })}
+        </div>
+        {/* Login and burgermenu */}
+        <div className="flex items-center space-x-4">
+          <div className="flex items-center cursor-pointer text-white space-x-2 hover:text-red-400 transition-all duration-200">
+            <FaUserCircle className="w-5 h-5"/>
+            <p className="font-bold text-xs sm:text-base">Login / Register</p>
+          </div>
+          <HiBars3BottomRight className="sm:w-8 sm:h-8 w-6 h-6 cursor-pointer text-white lg:hidden"/>
         </div>
       </div>
     </div>
