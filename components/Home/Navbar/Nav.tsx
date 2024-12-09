@@ -5,7 +5,7 @@ import { FaUserCircle } from "react-icons/fa";
 import { FaHouse } from "react-icons/fa6";
 import { HiBars3BottomRight } from "react-icons/hi2";
 
-const navLinks = [
+export const navLinks = [
   {
     id: 1,
     url: "#",
