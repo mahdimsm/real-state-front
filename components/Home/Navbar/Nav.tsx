@@ -1,5 +1,6 @@
+"use client";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaUserCircle } from "react-icons/fa";
 import { FaHouse } from "react-icons/fa6";
 import { HiBars3BottomRight } from "react-icons/hi2";
@@ -33,8 +34,19 @@ const navLinks = [
 ];
 
 const Nav = () => {
+  const [navBg, setNavBg] = useState(false);
+  useEffect(() => {
+    const handler = () => {
+      if (window.scrollY >= 90) setNavBg(true);
+      if (window.scrollY < 90) setNavBg(false);
+    };
+    window.addEventListener("scroll",handler);
+    return ()=>{
+      window.removeEventListener("scroll",handler);
+    }
+  }, []);
   return (
-    <div className="fixed h-[10vh] z-[100] w-full transition-all duration-200 bg-black">
+    <div className={`fixed ${navBg ? "bg-gray-800" :""} h-[10vh] z-[100] w-full transition-all duration-200 bg-gray-700`}>
       <div className="flex items-center h-full justify-between w-[95%] sm:w-[90%] xl:w-[80%] mx-auto">
         {/* LOGO */}
         <div className="flex items-center space-x-2">
@@ -60,10 +72,10 @@ const Nav = () => {
         {/* Login and burgermenu */}
         <div className="flex items-center space-x-4">
           <div className="flex items-center cursor-pointer text-white space-x-2 hover:text-red-400 transition-all duration-200">
-            <FaUserCircle className="w-5 h-5"/>
+            <FaUserCircle className="w-5 h-5" />
             <p className="font-bold text-xs sm:text-base">Login / Register</p>
           </div>
-          <HiBars3BottomRight className="sm:w-8 sm:h-8 w-6 h-6 cursor-pointer text-white lg:hidden"/>
+          <HiBars3BottomRight className="sm:w-8 sm:h-8 w-6 h-6 cursor-pointer text-white lg:hidden" />
         </div>
       </div>
     </div>
