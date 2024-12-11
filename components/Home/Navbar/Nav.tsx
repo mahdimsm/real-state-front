@@ -4,6 +4,9 @@ import React, { useEffect, useState } from "react";
 import { FaUserCircle } from "react-icons/fa";
 import { FaHouse } from "react-icons/fa6";
 import { HiBars3BottomRight } from "react-icons/hi2";
+type Props={
+  openNav:()=>void
+}
 
 export const navLinks = [
   {
@@ -33,7 +36,7 @@ export const navLinks = [
   },
 ];
 
-const Nav = () => {
+const Nav = ({openNav}:Props) => {
   const [navBg, setNavBg] = useState(false);
   useEffect(() => {
     const handler = () => {
@@ -75,7 +78,7 @@ const Nav = () => {
             <FaUserCircle className="w-5 h-5" />
             <p className="font-bold text-xs sm:text-base">Login / Register</p>
           </div>
-          <HiBars3BottomRight className="sm:w-8 sm:h-8 w-6 h-6 cursor-pointer text-white lg:hidden" />
+          <HiBars3BottomRight onClick={openNav} className="sm:w-8 sm:h-8 w-6 h-6 cursor-pointer text-white lg:hidden" />
         </div>
       </div>
     </div>
