@@ -1,3 +1,4 @@
+import SearchBox from "@/components/Helper/SearchBox";
 import React from "react";
 
 const Hero = () => {
@@ -17,6 +18,10 @@ const Hero = () => {
           Find Your Dream Home
         </h1>
         <p className="mt-4 text-center text-sm sm:text-base text-gray-200">We have more than 745,000 apartments place & plot</p>
+        
+        <div className="mt-12 w-full">
+          <SearchBox/>
+        </div>
       </div>
     </div>
   );
