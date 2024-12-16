@@ -6,14 +6,17 @@ import { BiLinkExternal } from "react-icons/bi";
 import { BsHeart, BsPlusSquare } from "react-icons/bs";
 
 type Props = {
-  id: number;
-  propertyName: string;
-  location: string;
-  bedrooms: number;
-  bathrooms: number;
-  size: number;
-  price: number;
-  imageUrl: string;
+  property:{
+    id: number;
+    propertyName: string;
+    location: string;
+    bedrooms: number;
+    bathrooms: number;
+    size: number;
+    price: number;
+    imageUrl: string;
+  }
+
 };
 
 const PropertyCard = ({ property }: Props) => {
