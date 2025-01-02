@@ -1,6 +1,6 @@
 import React from "react";
 import { FaSearch } from "react-icons/fa";
-import { HiAdjustments } from "react-icons/hi";
+
 import { HiAdjustmentsHorizontal } from "react-icons/hi2";
 
 const SearchBox = () => {
